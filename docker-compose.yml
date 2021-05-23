@@ -1,0 +1,17 @@
+version: '3'
+services:
+    rabbitmq:
+        image: rabbitmq:3
+        hostname: rabbitmq
+        container_name: rabbitmq
+        ports:
+            - 5672:5672
+        restart: unless-stopped
+
+    foo:
+        image: foo:latest
+        hostname: foo
+        container_name: foo
+        restart: unless-stopped
+        depends_on:
+            - rabbitmq
