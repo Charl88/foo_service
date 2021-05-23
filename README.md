@@ -63,4 +63,6 @@ I didn't want to spend too long debugging the serialization, and also re-read th
 
 Spent another 10 minutes reading more about raising errors with the nameko library and implementing some basic checks.
 
-Total time spent on the task was around an hour, including setting up the docker containers, testing everything, and writing up some documentation.
+Spend a bit of time reviewing and fixing typos.
+
+Total time spent on the task was around an hour and a half, including setting up the docker containers, testing everything, and writing up some documentation.
