@@ -13,7 +13,7 @@ Run the rabbitmq container.
 
 Then bring up the nameko service
 
-    nameko run services.foo
+    nameko run src.foo
 
 You can then interact with the service through the nameko shell.
 
