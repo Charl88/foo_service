@@ -1,5 +1,5 @@
 import pytest
-from services.foo import FooService
+from src.foo import FooService
 
 
 def test_square_odd():
@@ -18,6 +18,7 @@ def test_square_odd():
         foo.square_odd(1)
         foo.square_odd(True)
 
+
 def test_encoding_decoding():
     foo = FooService()
     strings = ['this is a test string', 'this is another test string']
@@ -32,3 +33,4 @@ def test_encoding_decoding():
         foo.encode(True)
         foo.decode(123132)
         foo.decode([123, 123])
+        foo.decode(False)

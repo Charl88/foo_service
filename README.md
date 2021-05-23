@@ -5,7 +5,7 @@ For development purposes you will need to install the python environment and dep
     sudo apt install python3.6
     virtualenv -p python3.6 venv
     source venv/bin/activate
-    pip install -r requirements.txt
+    pip install -r requirements/dev.txt
 
 Run the rabbitmq container.
 
@@ -29,6 +29,10 @@ You can then interact with the service through the nameko shell.
 Run the tests using pytest.
 
     pytest
+
+Run flake8 to check code style.
+
+    flake8
 
 # Running the service with docker
 
