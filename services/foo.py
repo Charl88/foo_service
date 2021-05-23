@@ -6,7 +6,7 @@ import base64
 class FooService:
     name = "foo"
 
-    @rpc
+    @rpc(expected_exceptions=TypeError)
     def square_odd(self, numbers: list) -> list:
         """Squares all the odd numbers in a given list of integers.
 
@@ -19,9 +19,12 @@ class FooService:
         Returns:
             list: A list of integers
         """
+        # just some basic error checking on the arguments
+        if type(numbers) is not list:
+            raise TypeError('Argument type should be a list.')
         return [round(num)**2 if round(num) % 2 != 0 else round(num) for num in numbers]
 
-    @rpc
+    @rpc(expected_exceptions=TypeError)
     def encode(self, strings: list) -> dict:
         """Compresses a list of strings by applying Huffman and base64 encoding on each string.
 
@@ -32,6 +35,9 @@ class FooService:
             dict: A dictionary of the compressed strings, where the keys are the original string
                   and the values are the encoded strings.
         """
+        # just some basic error checking on the arguments
+        if type(strings) is not list:
+            raise TypeError('Argument type should be a list.')
         # we use the precompiled huffman table provided by the dahuffman library
         codec = load_shakespeare()
         encoded = {}
@@ -44,7 +50,7 @@ class FooService:
         return encoded
 
 
-    @rpc
+    @rpc(expected_exceptions=TypeError)
     def decode(self, string: str) -> str:
         """Decodes a given Huffman and base64 encoded string.
 
@@ -54,6 +60,9 @@ class FooService:
         Returns
             str: The decoded string
         """
+        # just some basic error checking on the arguments
+        if type(string) is not str:
+            raise TypeError('Argument should be a string.')
         codec = load_shakespeare()
         b64_bytes = string.encode()
         string_bytes = base64.b64decode(b64_bytes)
