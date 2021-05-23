@@ -47,6 +47,7 @@ class FooService:
             # we need to encode the binary output to a base64 string so that
             # the service can serialize it with json
             b64_bytes = base64.b64encode(huff_bytes)
+            # defaults to decoding to a 'utf-8' string
             encoded[string] = b64_bytes.decode()
         return encoded
 
@@ -65,6 +66,7 @@ class FooService:
         if type(string) is not str:
             raise TypeError('Argument should be a string.')
         codec = load_shakespeare()
+        # defaults to encoding to a 'utf-8' string
         b64_bytes = string.encode()
         string_bytes = base64.b64decode(b64_bytes)
         return codec.decode(string_bytes)
