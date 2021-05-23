@@ -61,4 +61,6 @@ At first I tried using the 'pickle' serializer to handle the output from the dah
 
 I didn't want to spend too long debugging the serialization, and also re-read the task description which specified that it wanted the output in a string, so I opted to encode the Huffman output to base64 string representation and use the default json serializer. This part took another 10 minutes.
 
+Spent another 10 minutes reading more about raising errors with the nameko library and implementing some basic checks.
+
 Total time spent on the task was around an hour, including setting up the docker containers, testing everything, and writing up some documentation.
