@@ -1,6 +1,7 @@
+import base64
+import logging
 from nameko.rpc import rpc
 from dahuffman import load_shakespeare
-import base64
 
 
 class FooService:
