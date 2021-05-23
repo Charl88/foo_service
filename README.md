@@ -45,7 +45,7 @@ Interact with the service through the nameko shell (you will need to install nam
     nameko shell
     >> n.rpc.foo.square_odd([1, 2, 3, 4, 5])
     >> code = n.rpc.foo.encode(['this is a test string', 'this is another test string'])
-    >> n.rpc.decode(code['this is a test string'])
+    >> n.rpc.foo.decode(code['this is a test string'])
 
 # Notes
 
