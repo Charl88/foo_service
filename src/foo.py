@@ -11,7 +11,10 @@ class FooService:
         """Squares all the odd numbers in a given list of integers.
 
         If a float is included in the list of integers, then the function will
-        round the float to the nearest integer.
+        round the float to the nearest integer using bankers rounding.
+
+        Bankers rounding will round to the nearest integer, or round the half
+        to the nearest even integer (0.5 -> 0, 1.5 -> 2, 2.5 -> 2).
 
         Parameters:
             numbers (list): A list of integers
